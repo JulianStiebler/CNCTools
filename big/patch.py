@@ -1,3 +1,7 @@
+"""
+This module contains data classes representing modifiable parameters in BIG archives.
+And also a list of target parameters that may make sense to be configurable.
+"""
 from dataclasses import dataclass
 
 @dataclass

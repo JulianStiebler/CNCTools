@@ -3,6 +3,9 @@ import re
 import struct
 from typing import List, Dict, Any, Optional
 from .patch import ModParameter
+import json
+
+INSIGHTFOLDER = "insights"
 
 class BigArchive:
     """
@@ -375,3 +378,35 @@ class BigArchive:
             str: The normalized file path.
         """
         return path.replace("\\", "/").lower().strip()
+    
+    
+    def scan_and_collect_metadata(root_dir: str, output_file: str):
+        metadata = {}
+
+        for dirpath, _, filenames in os.walk(root_dir):
+            for filename in filenames:
+                if filename.lower().endswith('.big'):
+                    big_path = os.path.join(dirpath, filename)
+                    try:
+                        archive = BigArchive(big_path)
+                        sorted_entries = {}
+
+                        for entry in archive.entries:
+                            file_path = entry['file_path']
+                            file_offset = entry['file_offset']
+                            ext = os.path.splitext(file_path)[1].lower() or 'other'
+                            
+                            if ext not in sorted_entries:
+                                sorted_entries[ext] = {}
+
+                            sorted_entries[ext][file_path] = file_offset
+                        
+                        metadata[filename] = sorted_entries
+                        print(f"Scanned {filename} with {len(archive.entries)} entries.")
+                    except Exception as e:
+                        print(f"Failed to parse {filename}: {e}")
+
+        with open(output_file, 'w') as f:
+            json.dump(metadata, f, indent=4)
+
+        print(f"Metadata written to {output_file}")
