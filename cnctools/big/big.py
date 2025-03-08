@@ -380,7 +380,7 @@ class BigArchive:
         return path.replace("\\", "/").lower().strip()
     
     
-    def scan_and_collect_metadata(root_dir: str, output_file: str):
+    def scan_and_collect_metadata(root_dir: str, output_file: str, save_file: bool = True, return_data: bool = False) -> Optional[Dict[str, Any]]:
         metadata = {}
 
         for dirpath, _, filenames in os.walk(root_dir):
@@ -406,7 +406,10 @@ class BigArchive:
                     except Exception as e:
                         print(f"Failed to parse {filename}: {e}")
 
-        with open(output_file, 'w') as f:
-            json.dump(metadata, f, indent=4)
+        if save_file:
+            with open(output_file, 'w') as f:
+                json.dump(metadata, f, indent=4)
+            print(f"Metadata written to {output_file}")
 
-        print(f"Metadata written to {output_file}")
+        if return_data:
+            return metadata

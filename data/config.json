@@ -1,0 +1,33 @@
+{
+    "window": {
+        "main_pane_ratios": [
+            0.2,
+            0.8
+        ],
+        "window_size": [
+            1200,
+            800
+        ]
+    },
+    "pygment": {
+        "style": "default",
+        "style_overrides": {}
+    },
+    "editor": {
+        "auto_save_interval": 30,
+        "font_size": 12,
+        "show_line_numbers": true,
+        "tab_size": 4
+    },
+    "game": {
+        "last_game_folder": "C:/Games/Steam/steamapps/common/Command & Conquer Generals - Zero Hour",
+        "recent_folders": [
+            "C:/Games/Steam/steamapps/common/Command & Conquer Generals - Zero Hour",
+            "C:/Games/Steam/steamapps/common/Command & Conquer Generals - Zero Hour/ZH_Generals"
+        ]
+    },
+    "general": {
+        "temp_dir": "temp",
+        "backup_dir": "backups"
+    }
+}
