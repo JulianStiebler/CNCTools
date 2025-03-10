@@ -1,0 +1,7 @@
+LIBRARY   d3d8.dll
+
+EXPORTS
+    PrintAddress
+    Direct3D8EnableMaximizedModeShim
+    Direct3DCreate8
+    // Add other exports here if needed

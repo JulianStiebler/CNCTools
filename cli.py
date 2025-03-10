@@ -1,7 +1,7 @@
 import argparse
 
-from big import BigArchive
-from big.patch import TargetParameters
+from BIGArchive import BigArchive
+from BIGArchive.patch import TargetParameters
 
 CNCPATH = "C:\Games\Steam\steamapps\common\Command & Conquer Generals - Zero Hour"
 INSIGHTFOLDER = "insights"

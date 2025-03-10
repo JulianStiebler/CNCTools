@@ -12,6 +12,8 @@ from pygments.formatters import get_formatter_by_name
 from .config import config, WindowOptions, PygmentOptions, EditorOptions, GameOptions
 from .vfs import VirtualFile, VirtualFileSystem
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
 class FileTreeView(ttk.Treeview):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)

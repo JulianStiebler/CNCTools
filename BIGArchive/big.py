@@ -5,8 +5,6 @@ from typing import List, Dict, Any, Optional
 from .patch import ModParameter
 import json
 
-INSIGHTFOLDER = "insights"
-
 class BigArchive:
     """
     Class for working with BIG archive files commonly used in EA games.

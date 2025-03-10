@@ -6,6 +6,8 @@ import json
 
 ConfigEnum = Union[Enum, EnumMeta]
 
+DATADIR = "_data"
+
 class WindowOptions(Enum):
     MAIN_PANE_RATIOS = [0.2, 0.8]  # Left sidebar vs main editor ratio
     WINDOW_SIZE = (1200, 800)      # Default window size
@@ -24,10 +26,10 @@ class EditorOptions(Enum):
 class GameOptions(Enum):
     LAST_GAME_FOLDER = ""          # Last opened game folder
     RECENT_FOLDERS = []            # List of recently opened folders
-    
+
 class GeneralOptions(Enum):
-    TEMP_DIR = "temp"              # For temporary file extractions
-    BACKUP_DIR = "backups"         # For backing up original BIG files
+    TEMP_DIR = f"{DATADIR}/temp"
+    BACKUP_DIR = f"{DATADIR}/backups"
     
 config_enums = [WindowOptions, PygmentOptions, EditorOptions, GameOptions, GeneralOptions]
 
@@ -156,6 +158,6 @@ class CNCToolsConfig:
             print(f"Config save error: {e}")
             
 config = CNCToolsConfig(
-    save_folder="cncide/data",
+    save_folder=DATADIR,
     config_file="config.json"
 )
