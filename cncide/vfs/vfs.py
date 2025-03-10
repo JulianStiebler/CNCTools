@@ -1,7 +1,7 @@
 import os
 from typing import Dict, Optional, Union
 
-from ..big import BigArchive
+from ..shared import BigArchive
 from ..config import config, GameOptions, GeneralOptions
 
 class VirtualFile:
@@ -212,7 +212,6 @@ class VirtualFileSystem:
         # First add the BIG archives at root level
         for big_path, archive in sorted(self.big_archives.items()):
             big_name = os.path.basename(big_path)
-            rel_path = os.path.relpath(big_path, self.root_path)
             
             structure[big_name] = {
                 "type": "big",

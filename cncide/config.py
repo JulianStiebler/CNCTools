@@ -155,4 +155,7 @@ class CNCToolsConfig:
         except IOError as e:
             print(f"Config save error: {e}")
             
-config = CNCToolsConfig()
+config = CNCToolsConfig(
+    save_folder="cncide/data",
+    config_file="config.json"
+)
