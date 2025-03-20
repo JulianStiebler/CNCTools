@@ -1,0 +1,50 @@
+# entry Function Analysis
+
+This document describes the structure and purpose of the `entry` function, the program's entry point.
+
+## Function Overview
+
+The `entry` function is the initial code executed when the program starts. It performs essential initialization tasks, processes command-line arguments, and then calls the main game logic.
+
+## Core Pattern
+
+The function follows these key steps:
+
+1.  **Stack Initialization:**
+    * Initializes stack variables and exception handling structures (`ExceptionList`).
+    * `puStack_c = &DAT_00977600;`, `puStack_10 = &DAT_008f851e;`, `pvStack_14 = ExceptionList;`, `local_1c = &stack0xffffff78;`, `local_8 = 0;`, `ExceptionList = &pvStack_14;`
+2.  **Application Type and Floating-Point Settings:**
+    * Sets the application type using `__set_app_type(2)`.
+    * Initializes floating-point settings (`_DAT_00a8883c`, `DAT_00a88840`, `__p__fmode()`, `__p__commode()`, `_DAT_00a88838`, `FUN_008f8557()`).
+    * Sets math error handling (`__setusermatherr(&LAB_008f8554)` and `FUN_008f8542()`).
+3.  **CRT Initialization:**
+    * Initializes the C runtime library (CRT) using `initterm(&DAT_009cdacc,&DAT_009cdad0)` and `initterm(&DAT_009cd000,&DAT_009cdac8)`.
+4.  **Command-Line Argument Processing:**
+    * Retrieves command-line arguments using `__getmainargs()`.
+    * Parses command-line arguments, specifically looking for quoted strings (`0x22`).
+    * `pbVar4 = *(byte **)_acmdln_exref;` and the subsequent loop.
+5.  **Window Display Settings:**
+    * Retrieves startup information using `GetStartupInfoA(&local_60)`.
+    * Determines the window display mode based on the startup information.
+    * `local_60.dwFlags = 0;`, `GetStartupInfoA(&local_60);`, and the if statement.
+6.  **Main Game Logic Call:**
+    * Retrieves the module handle using `GetModuleHandleA((LPCSTR)0x0)`.
+    * Calls the main game logic function `FUN_004016f0()`.
+    * `pHVar3 = GetModuleHandleA((LPCSTR)0x0);`, `local_6c = FUN_004016f0(pHVar3,uVar5,pbVar4,uVar2);`
+7.  **Program Termination:**
+    * Terminates the program using `exit(local_6c)`.
+
+## Additional Notes
+
+* The function heavily relies on CRT functions for initialization.
+* The command-line parsing logic is specific to handling quoted strings.
+* The `FUN_004016f0` function is the main entry point to the game's core logic.
+* The use of undefined data types indicates that the exact data structures are not yet known.
+
+## Further Investigation
+
+* Analyze the `FUN_004016f0` function to understand the game's main logic.
+* Examine the data structures related to the CRT initialization.
+* Investigate the purpose of the command-line arguments being processed.
+* Determine the exact meaning of the window display mode settings.
+* Determine the purpose of the global variables used, and the values they are being set to.

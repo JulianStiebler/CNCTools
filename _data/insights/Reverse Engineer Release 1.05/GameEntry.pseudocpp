@@ -1,0 +1,75 @@
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void entry(void)
+
+{
+  undefined4 *puVar1;
+  uint uVar2;
+  HMODULE pHVar3;
+  byte *pbVar4;
+  undefined4 uVar5;
+  char **local_74;
+  _startupinfo local_70;
+  int local_6c;
+  char **local_68;
+  int local_64;
+  _STARTUPINFOA local_60;
+  undefined1 *local_1c;
+  void *pvStack_14;
+  undefined *puStack_10;
+  undefined *puStack_c;
+  undefined4 local_8;
+
+  puStack_c = &DAT_00977600;
+  puStack_10 = &DAT_008f851e;
+  pvStack_14 = ExceptionList;
+  local_1c = &stack0xffffff78;
+  local_8 = 0;
+  ExceptionList = &pvStack_14;
+  __set_app_type(2);
+  _DAT_00a8883c = 0xffffffff;
+  DAT_00a88840 = 0xffffffff;
+  puVar1 = (undefined4 *)__p__fmode();
+  *puVar1 = DAT_00a83b4c;
+  puVar1 = (undefined4 *)__p__commode();
+  *puVar1 = DAT_00a83b48;
+  _DAT_00a88838 = *(undefined4 *)_adjust_fdiv_exref;
+  FUN_008f8557();
+  if (DAT_00a34c30 == 0) {
+    __setusermatherr(&LAB_008f8554);
+  }
+  FUN_008f8542();
+  initterm(&DAT_009cdacc,&DAT_009cdad0);
+  local_70.newmode = DAT_00a83b44;
+  __getmainargs(&local_64,&local_74,&local_68,DAT_00a83b40,&local_70);
+  initterm(&DAT_009cd000,&DAT_009cdac8);
+  pbVar4 = *(byte **)_acmdln_exref;
+  if (*pbVar4 != 0x22) {
+    do {
+      if (*pbVar4 < 0x21) goto LAB_008f8233;
+      pbVar4 = pbVar4 + 1;
+    } while( true );
+  }
+  do {
+    pbVar4 = pbVar4 + 1;
+    if (*pbVar4 == 0) break;
+  } while (*pbVar4 != 0x22);
+  if (*pbVar4 != 0x22) goto LAB_008f8233;
+  do {
+    pbVar4 = pbVar4 + 1;
+LAB_008f8233:
+  } while ((*pbVar4 != 0) && (*pbVar4 < 0x21));
+  local_60.dwFlags = 0;
+  GetStartupInfoA(&local_60);
+  if ((local_60.dwFlags & 1) == 0) {
+    uVar2 = 10;
+  }
+  else {
+    uVar2 = (uint)local_60.wShowWindow;
+  }
+  uVar5 = 0;
+  pHVar3 = GetModuleHandleA((LPCSTR)0x0);
+  local_6c = FUN_004016f0(pHVar3,uVar5,pbVar4,uVar2);
+                  /* WARNING: Subroutine does not return */
+  exit(local_6c);
+}

@@ -1,0 +1,98 @@
+        00417384 57 4d 5f        ds         "WM_PALETTECHANGED"
+                 50 41 4c 
+                 45 54 54 
+        00417398 3f 20 55        ds         "? UNKNOWN ?"
+                 4e 4b 4e 
+                 4f 57 4e 
+        004173a4 57 4d 5f        ds         "WM_PALETTEISCHANGING"
+                 50 41 4c 
+                 45 54 54 
+        004173bc 57 4d 5f        ds         "WM_SYSCOMMAND"
+                 53 59 53 
+                 43 4f 4d 
+        004173cc 57 4d 5f        ds         "WM_MOUSEMOVE"
+                 4d 4f 55 
+                 53 45 4d 
+        004173dc 57 4d 5f        ds         "WM_KEYDOWN"
+                 4b 45 59 
+                 44 4f 57 
+        004173e8 57 4d 5f        ds         "WM_NCCALCSIZE"
+                 4e 43 43 
+                 41 4c 43 
+        004173f8 57 4d 5f        ds         "WM_NCACTIVATE"
+                 4e 43 41 
+                 43 54 49 
+        00417408 57 4d 5f        ds         "WM_NCPAINT"
+                 4e 43 50 
+                 41 49 4e 
+        00417414 57 4d 5f        ds         "WM_DISPLAYCHANGE"
+                 44 49 53 
+                 50 4c 41 
+        00417428 57 4d 5f        ds         "WM_WINDOWPOSCHANGED"
+                 57 49 4e 
+                 44 4f 57 
+        0041743c 57 4d 5f        ds         "WM_WINDOWPOSCHANGING"
+                 57 49 4e 
+                 44 4f 57 
+        00417454 57 4d 5f        ds         "WM_SETCURSOR"
+                 53 45 54 
+                 43 55 52 
+        00417464 57 4d 5f        ds         "WM_ACTIVATEAPP"
+                 41 43 54 
+                 49 56 41 
+        00417474 57              ??         57h    W
+        00417475 4d              ??         4Dh    M
+        00417476 5f              ??         5Fh    _
+        00417477 51              ??         51h    Q
+        00417478 55              ??         55h    U                                         ?  ->  00544955
+        00417479 49              ??         49h    I
+        0041747a 54              ??         54h    T
+        0041747b 00              ??         00h
+        0041747c 57 4d 5f        ds         "WM_CLOSE"
+                 43 4c 4f 
+                 53 45 00 
+        00417488 57 4d 5f        ds         "WM_PAINT"
+                 50 41 49 
+                 4e 54 00 
+        00417494 57 4d 5f        ds         "WM_REDRAW"
+                 52 45 44 
+                 52 41 57 
+        004174a0 57 4d 5f        ds         "WM_ENABLE"
+                 45 4e 41 
+                 42 4c 45 
+        004174ac 57 4d 5f        ds         "WM_KILLFOCUS"
+                 4b 49 4c 
+                 4c 46 4f 
+        004174bc 57 4d 5f        ds         "WM_SETFOCUS"
+                 53 45 54 
+                 46 4f 43 
+        004174c8 57 4d 5f        ds         "WM_ACTIVATE"
+                 41 43 54 
+                 49 56 41 
+        004174d4 57 4d 5f        ds         "WM_SIZE"
+                 53 49 5a 
+                 45 00
+        004174dc 57 4d 5f        ds         "WM_MOVE"
+                 4d 4f 56 
+                 45 00
+        004174e4 57 4d 5f        ds         "WM_QUERYOPEN"
+                 51 55 45 
+                 52 59 4f 
+        004174f4 57 4d 5f        ds         "WM_GETTEXT"
+                 47 45 54 
+                 54 45 58 
+        00417500 57 4d 5f        ds         "WM_ERASEBKGND"
+                 45 52 41 
+                 53 45 42 
+        00417510 57 4d 5f        ds         "WM_CANCELMODE"
+                 43 41 4e 
+                 43 45 4c 
+        00417520 57 4d 5f        ds         "WM_DESTROY"
+                 44 45 53 
+                 54 52 4f 
+        0041752c 57 4d 5f        ds         "WM_CREATE"
+                 43 52 45 
+                 41 54 45 
+        00417538 57 4d 5f        ds         "WM_NULL"
+                 4e 55 4c 
+                 4c 00
